@@ -1,0 +1,37 @@
+{
+  "name": "jquery-linkalize",
+  "version": "1.0.0",
+  "description": "Find URLs and create a tags inside an element",
+  "main": "jquery-linkalize.js",
+  "scripts": {
+    "test": "karma start",
+    "build": "node_modules/babel/bin/babel.js --modules umd -o dist/jquery.linkalize.js src/jquery-linkalize.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoskonrad/jquery-linkalize.git"
+  },
+  "keywords": [
+    "jquery",
+    "link"
+  ],
+  "author": "Bruno Konrad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunoskonrad/jquery-linkalize/issues"
+  },
+  "homepage": "https://github.com/brunoskonrad/jquery-linkalize#readme",
+  "devDependencies": {
+    "babel": "^5.6.23",
+    "bower": "^1.4.1",
+    "chai": "^3.1.0",
+    "karma": "^0.13.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}
