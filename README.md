@@ -9,9 +9,9 @@ Ok. Let's suppose that you create a dynamic UI. And the content has a URL in tex
 There some (ah, that's just one but...) option. The `class` one.
 
 
-|Options|Description|
-|-|-|
-|class|Pass the classes that will be wrapped in the `<a>` tag|
+| Options | Description |
+|-------- | ----------- |
+| class   | Pass the classes that will be wrapped in the `<a>` tag |
 
 ## Contribute
 
