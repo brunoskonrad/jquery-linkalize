@@ -8,7 +8,7 @@
   }
 }(function ($) {
 
-  var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w|#|@ \.-]*)*\/?)/g
+  var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w|{_~:#\[\]@!$&'\(\)*+,;=} \.-]*)*\/?)/g
     , defaultOptions = {};
 
   function linkOptions(options) {

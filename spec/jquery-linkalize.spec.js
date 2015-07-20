@@ -100,4 +100,17 @@ describe('jQuery Linkalize', function() {
     expect($linkElement.text())
       .to.equal('https://medium.com/@leobetosouza/sobre-a-bolsa-de-diversidade-da-braziljs-7921423cc9b1');
   });
+
+  it('should accept "!"', function() {
+    var url = 'https://www.google.com.br#!foo';
+    subject('<p>Foo text: ' + url + '</p>');
+
+    $subject.linkalize();
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.attr('href')).to.equal(url);
+    expect($linkElement.text()).to.equal(url);
+  });
 });
