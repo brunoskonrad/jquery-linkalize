@@ -1,7 +1,7 @@
 # jQuery Linkalize
 
 [![Build Status](https://travis-ci.org/brunoskonrad/jquery-linkalize.svg?branch=master)](https://travis-ci.org/brunoskonrad/jquery-linkalize)
-[![Coverage Status](https://coveralls.io/repos/brunoskonrad/jquery-linkalize/badge.svg?branch=master&service=github)](https://coveralls.io/github/brunoskonrad/jquery-linkalize?branch=master)
+[![Bower version](https://badge.fury.io/bo/jquery-linkalize.svg)](http://badge.fury.io/bo/jquery-linkalize)
 
 Ok. Let's suppose that you create a dynamic UI. And the content has a URL in text format. How do you make it clickable? Run `$('foo').linkalize()` and that's it!
 
