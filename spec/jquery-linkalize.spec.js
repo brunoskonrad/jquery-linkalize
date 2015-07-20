@@ -56,7 +56,7 @@ describe('jQuery Linkalize', function() {
   });
 
   it('should add classes to the linkalized element', function() {
-    subject('<p>Foo text: https://www.google.com.br</p>');
+    subject('<p>Foo text: https://github.com/brunoskonrad/jquery-linkalize</p>');
 
     $subject.linkalize({
       'class': 'foo bar baz'
@@ -65,11 +65,39 @@ describe('jQuery Linkalize', function() {
     $linkElement = $subject.find('a');
 
     expect($linkElement.length).to.equal(1);
-    expect($linkElement.attr('href')).to.equal('https://www.google.com.br');
-    expect($linkElement.text()).to.equal('https://www.google.com.br');
+    expect($linkElement.attr('href'))
+      .to.equal('https://github.com/brunoskonrad/jquery-linkalize');
+    expect($linkElement.text())
+      .to.equal('https://github.com/brunoskonrad/jquery-linkalize');
 
     expect($linkElement.hasClass('foo')).to.equal(true);
     expect($linkElement.hasClass('bar')).to.equal(true);
     expect($linkElement.hasClass('baz')).to.equal(true);
+  });
+
+  it('should support # in the URL', function() {
+    subject('<p>Foo text: https://www.google.com.br#foo</p>');
+
+    $subject.linkalize();
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.attr('href')).to.equal('https://www.google.com.br#foo');
+    expect($linkElement.text()).to.equal('https://www.google.com.br#foo');
+  });
+
+  it('should accept a social link', function() {
+    subject('<p>https://medium.com/@leobetosouza/sobre-a-bolsa-de-diversidade-da-braziljs-7921423cc9b1</p>');
+
+    $subject.linkalize();
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.attr('href'))
+      .to.equal('https://medium.com/@leobetosouza/sobre-a-bolsa-de-diversidade-da-braziljs-7921423cc9b1');
+    expect($linkElement.text())
+      .to.equal('https://medium.com/@leobetosouza/sobre-a-bolsa-de-diversidade-da-braziljs-7921423cc9b1');
   });
 });
