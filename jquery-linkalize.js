@@ -8,10 +8,17 @@
   }
 }(function ($) {
 
-  var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g;
+  var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/g
+    , defaultOptions = {};
 
   function linkOptions(options) {
-    return '';
+    var linkOptions = '';
+
+    if (options.class) {
+      linkOptions += 'class="' + options.class + '" ';
+    }
+
+    return linkOptions;
   }
 
   function linkalize(element, options) {
@@ -22,6 +29,7 @@
   }
 
   $.fn.linkalize = function(options) {
+    options = $.extend({}, defaultOptions, options);
     this.each(function() {
       linkalize($(this), options);
     });

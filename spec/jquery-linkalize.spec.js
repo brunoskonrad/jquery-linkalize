@@ -54,4 +54,22 @@ describe('jQuery Linkalize', function() {
     expect($linkElement.attr('href')).to.equal('https://www.google.com.br');
     expect($linkElement.text()).to.equal('https://www.google.com.br');
   });
+
+  it('should add classes to the linkalized element', function() {
+    subject('<p>Foo text: https://www.google.com.br</p>');
+
+    $subject.linkalize({
+      'class': 'foo bar baz'
+    });
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.attr('href')).to.equal('https://www.google.com.br');
+    expect($linkElement.text()).to.equal('https://www.google.com.br');
+
+    expect($linkElement.hasClass('foo')).to.equal(true);
+    expect($linkElement.hasClass('bar')).to.equal(true);
+    expect($linkElement.hasClass('baz')).to.equal(true);
+  });
 });
