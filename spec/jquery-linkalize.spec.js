@@ -113,4 +113,17 @@ describe('jQuery Linkalize', function() {
     expect($linkElement.attr('href')).to.equal(url);
     expect($linkElement.text()).to.equal(url);
   });
+
+  it('should open in a blank page', function() {
+    subject('<p>Foo text: https://www.google.com.br</p>');
+
+    $subject.linkalize({
+      open: 'blank'
+    });
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.attr('target')).to.equal('_blank');
+  })
 });

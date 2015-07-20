@@ -9,13 +9,16 @@
 }(function ($) {
 
   var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w|{_~:#\[\]@!$&'\(\)*+,;=} \.-]*)*\/?)/g
-    , defaultOptions = {};
+    , defaultOptions = {open: 'self'};
 
   function linkOptions(options) {
     var linkOptions = '';
 
     if (options.class) {
       linkOptions += 'class="' + options.class + '" ';
+    }
+    if (options.open == 'blank') {
+      linkOptions += 'target="_blank" ';
     }
 
     return linkOptions;

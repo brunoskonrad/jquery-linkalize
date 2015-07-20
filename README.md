@@ -13,6 +13,7 @@ There some (ah, that's just one but...) option. The `class` one.
 | Options | Description |
 |-------- | ----------- |
 | class   | Pass the classes that will be wrapped in the `<a>` tag |
+| open    | If `blank` then the link open in a new page. `self` is the default and open in the same |
 
 ## Contribute
 
