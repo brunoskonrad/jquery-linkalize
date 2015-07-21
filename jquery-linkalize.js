@@ -17,8 +17,18 @@
     if (options.class) {
       linkOptions += 'class="' + options.class + '" ';
     }
+
     if (options.open == 'blank') {
       linkOptions += 'target="_blank" ';
+    }
+
+    if (options.data) {
+      for (var d in options.data) {
+        if (options.data.hasOwnProperty(d)) {
+          var key = d.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+          linkOptions += 'data-' + key + '="' + options.data[d] + '"';
+        }
+      }
     }
 
     return linkOptions;
