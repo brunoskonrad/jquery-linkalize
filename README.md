@@ -7,13 +7,22 @@ Ok. Let's suppose that you create a dynamic UI. And the content has a URL in tex
 
 ## Options
 
-There some (ah, that's just one but...) option. The `class` one.
+You pass as a object on plugin calls. e.g.:
+```javascript
+$('foo').linkalize({
+  class: 'foo bar',
+  open: 'self',
+  data: {foo: 'bar'}
+});
+```
 
+And here's an option table with their description
 
 | Options | Description |
 |-------- | ----------- |
 | class   | Pass the classes that will be wrapped in the `<a>` tag |
 | open    | If `blank` then the link open in a new page. `self` is the default and open in the same |
+| data    | An object to represent data-attributes. E.g: `data: {foo: 'bar', fooBar: 'baz'}` will return `<a data-foo="bar" data-foo-bar="baz">...</a>`|
 
 ## Contribute
 

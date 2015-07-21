@@ -125,5 +125,25 @@ describe('jQuery Linkalize', function() {
 
     expect($linkElement.length).to.equal(1);
     expect($linkElement.attr('target')).to.equal('_blank');
-  })
+  });
+
+  it('should check the data-attribute in the element', function() {
+    var url = 'https://www.google.com.br';
+    subject('<p>Foo text: ' + url + '</p>');
+
+    $subject.linkalize({
+      data: {
+        foo: 'some value',
+        fooBar: 'another value',
+        fooBarBaz: 'oh yeah'
+      }
+    });
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.data('foo')).to.equal('some value');
+    expect($linkElement.data('foo-bar')).to.equal('another value');
+    expect($linkElement.data('foo-bar-baz')).to.equal('oh yeah');
+  });
 });
