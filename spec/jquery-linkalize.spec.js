@@ -146,4 +146,28 @@ describe('jQuery Linkalize', function() {
     expect($linkElement.data('foo-bar')).to.equal('another value');
     expect($linkElement.data('foo-bar-baz')).to.equal('oh yeah');
   });
+
+  it('should ignore the last parentheses from the URL', function() {
+    var input = '<p>I like google (www.google.com).</p>';
+    subject(input);
+
+    $subject.linkalize();
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.html()).to.equal('www.google.com');
+  });
+
+  it('should accept inner URL parentheses', function() {
+    var input = '<p>My url is https://msdn.microsoft.com/pt-br/library/system.string.format(v=vs.110).aspx</p>';
+    subject(input);
+
+    $subject.linkalize();
+
+    $linkElement = $subject.find('a');
+
+    expect($linkElement.length).to.equal(1);
+    expect($linkElement.html()).to.equal('https://msdn.microsoft.com/pt-br/library/system.string.format(v=vs.110).aspx');
+  });
 });
