@@ -8,7 +8,7 @@
   }
 }(function ($) {
 
-  var urlRegex = /((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w|{_~:#\[\]@!$&'\(\)*+,;=} \.-]*)*\/?)/g
+  var urlRegex = /((?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$]))/igm
     , defaultOptions = {open: 'self'};
 
   function linkOptions(options) {
